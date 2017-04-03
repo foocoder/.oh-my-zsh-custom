@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+
+# -*- coding: utf-8 -*-
+## ---- Program Info Start----
+#FileName:     .zsh_greeting
+#
+#Author:       Fuchen Duan
+#
+#Email:        slow295185031@gmail.com
+#
+#CreatedAt:    2016-12-18 10:42:07
+## ---- Program Info End  ----
+
+# Zsh Greeting
+echo "\e[31;1m"
+figlet "Talk is Cheap , Show Me the Code !" -c
+echo "\e[0m"
+strLastLoginInfo=$(last -n 2 $USER | head -2 | tail -1 )
+strLastLoginTTYInfo=$(echo $strLastLoginInfo | cut -c 10-20)
+strLastLoginHost=$(echo $strLastLoginInfo | cut -c 23-39)
+strLastLoginTimeInfo=$(echo $strLastLoginInfo | cut -c 40-56)
+strLastLogoutTimeInfo=$(echo $strLastLoginInfo | cut -c 59-)
+echo "\e[32m"
+echo "Welcome Back, \e[31m$USER!\e[32m You're on \e[31m$HOST\e[32m. It's currently \e[33m$(date '+%m/%d/%y %H:%M')\e[32m" | cowthink
+echo "\e[0m"
+echo "\e[32mLast Login : \e[31m$strLastLoginTimeInfo\e[32m on \e[31m$strLastLoginHost\e[32m Terminal \e[31m$strLastLoginTTYInfo \e[0m"
+echo "\e[32mLast Logout: \e[31m$strLastLogoutTimeInfo\e[0m"
