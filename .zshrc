@@ -82,6 +82,8 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 #
+# Set Local Time Format
+export LC_TIME="C"
 source ~/.zshrc.custom
 
 #autojump plugin
